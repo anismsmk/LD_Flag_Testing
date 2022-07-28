@@ -1,0 +1,1 @@
+echo "launchdarkly-server-sdk==7.5.0" >> requirements.txt && pip install -r requirements.txt
