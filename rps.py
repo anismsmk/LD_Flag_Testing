@@ -42,13 +42,23 @@ def rps():
     #### VARIATION CRAZY ####
 
 def rps_crazy():
+  print(""""The rules are as follows:
+                  Scissors cuts Paper  
+                Paper covers Rock   
+                Rock crushes Lizard   
+                Lizard poisons Spock   
+                Spock smashes Scissors   
+                Scissors decapitates Lizard   
+                Lizard eats Paper   
+                Paper disproves Spock   
+                Spock vaporizes Rock   
+                (and as it always has) Rock crushes Scissors """)
 
   T = ["Rock", "Paper", "Scissors", "Lizard", "Spok"]
   #assign a random play to the computer
   computer = T[randint(0,4)]
   print(computer)
   #set player to False
-
   player = False
   
   while player == False:
