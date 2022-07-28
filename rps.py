@@ -54,46 +54,39 @@ def rps_crazy():
   while player == False:
     player = input("Rock, Paper, Scissors, Lizard, Spock?\n")
     if player == computer:
-        print("Again!")
-    if(computer == "scissors" and (player == "paper" or player == "lizard")):
-        Win = True
-    elif(computer == "lizard" and (player == "paper" or player == "Spock")):
-        Win = True
-    elif(computer == "Spock" and (player == "rock" or player == "scissors")):
-        Win = True
-    elif(computer == "paper" and (player == "rock" or player == "Spock")):
-        Win = True
-    elif(computer == "rock" and (player == "scissors" or player == "lizard")):
-        Win = True
-    elif(player == "scissors" and (computer == "paper" or computer == "lizard")):
-        Lose = True
-    elif(player == "lizard" and (computer == "paper" or computer == "Spock")):
-        Lose = True
-    elif(player == "Spock" and (computer == "rock" or computer == "scissors")):
-        Lose = True
-    elif(player == "paper" and (computer == "rock" or computer == "Spock")):
-        Lose = True
-    elif(player == "rock" and (computer == "scissors" or computer == "lizard")):
-        Lose = True
-
+        print("Tie :/")
+    if(computer == "Scissors" and (player == "Paper" or player == "Lizard")):
+        print("BAZINGA!")
+    elif(computer == "Lizard" and (player == "Paper" or player == "Spock")):
+        print("BAZINGA!")
+    elif(computer == "Spock" and (player == "Rock" or player == "Scissors")):
+        print("BAZINGA!")
+    elif(computer == "Paper" and (player == "Rock" or player == "Spock")):
+        print("BAZINGA!")
+    elif(computer == "Rock" and (player == "Scissors" or player == "Lizard")):
+        print("BAZINGA!")
+    elif(player == "Scissors" and (computer == "Paper" or computer == "Lizard")):
+        print("YOU LOSE!")
+    elif(player == "Lizard" and (computer == "Paper" or computer == "Spock")):
+        print("YOU LOSE!")
+    elif(player == "Spock" and (computer == "Rock" or computer == "Scissors")):
+        print("YOU LOSE!")
+    elif(player == "Paper" and (computer == "Rock" or computer == "Spock")):
+        print("YOU LOSE!")
+    elif(player == "Rock" and (computer == "sSissors" or computer == "Lizard")):
+        print("YOU LOSE!")
+    #player was set to True, but we want it to be False so the loop continues
+    player = False
+    computer = T[randint(0,4)]
                 # Scissors cuts Paper  
-
                 # Paper covers Rock   
-
                 # Rock crushes Lizard   
-
                 # Lizard poisons Spock   
-
                 # Spock smashes Scissors   
-
                 # Scissors decapitates Lizard   
-
                 # Lizard eats Paper   
-
                 # Paper disproves Spock   
-
                 # Spock vaporizes Rock   
-
                 # (and as it always has) Rock crushes Scissors   
 
     #### END OFVARIATION CRAZY ####
