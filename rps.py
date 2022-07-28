@@ -1,6 +1,6 @@
 from random import randint
 
-def rps():
+def rps(cheat_value):
 
   #### VARIATION NORMAL ####
   #create a list of play options
@@ -8,7 +8,8 @@ def rps():
   
   #assign a random play to the computer
   computer = t[randint(0,2)]
-  
+  if cheat_value:
+    print("computer is going to chose: ",computer)
   #set player to False
   player = False
   
@@ -37,11 +38,13 @@ def rps():
       #player was set to True, but we want it to be False so the loop continues
       player = False
       computer = t[randint(0,2)]
+      if cheat_value:
+        print("computer is going to chose: ",computer)
     #### END OF VARIATION NORMAL ####
 
     #### VARIATION CRAZY ####
 
-def rps_crazy():
+def rps_crazy(cheat_value):
   print(""""The rules are as follows:
                 Scissors cuts Paper  
                 Paper covers Rock   
@@ -54,18 +57,20 @@ def rps_crazy():
                 Spock vaporizes Rock   
                 (and as it always has) Rock crushes Scissors """)
 
-  T = ["Rock", "Paper", "Scissors", "Lizard", "Spok"]
+  T = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   #assign a random play to the computer
   computer = T[randint(0,4)]
-  print(computer)
+  if cheat_value:
+    print("computer is going to chose: ",computer)
+  # print(computer)
   #set player to False
   player = False
   
   while player == False:
     player = input("Rock, Paper, Scissors, Lizard, Spock?\n")
     if player == computer:
-        print("Tie :/")
-    if(computer == "Scissors" and (player == "Paper" or player == "Lizard")):
+        print("Tie :/ \n" )
+    elif(computer == "Scissors" and (player == "Paper" or player == "Lizard")):
         print("BAZINGA! \n")
     elif(computer == "Lizard" and (player == "Paper" or player == "Spock")):
         print("BAZINGA!\n")
@@ -83,13 +88,15 @@ def rps_crazy():
         print("YOU LOSE!\n")
     elif(player == "Paper" and (computer == "Rock" or computer == "Spock")):
         print("YOU LOSE!\n")
-    elif(player == "Rock" and (computer == "sSissors" or computer == "Lizard")):
+    elif(player == "Rock" and (computer == "Scissors" or computer == "Lizard")):
         print("YOU LOSE!\n")
     else:
         print("That's not a valid play. Check your spelling! \n")
     #player was set to True, but we want it to be False so the loop continues
     player = False
     computer = T[randint(0,4)]
+    if cheat_value:
+      print("computer is going to chose: ",computer)
                 # Scissors cuts Paper  
                 # Paper covers Rock   
                 # Rock crushes Lizard   

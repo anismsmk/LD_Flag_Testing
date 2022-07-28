@@ -18,26 +18,41 @@ else:
 
 ########## Main Stuff ##########
 # Get User input
-name = input('What is your name? (Rick, Morty or Other)\n') 
+name = input('''What is your name? \n
+Rick, Morty or Your name to create user\n''') 
 
 # Evaluate user
 user = evaluate(name)
 
 # Call LaunchDarkly with the feature flag key you want to evaluate.
+#Testing some Flag
 flag_value = ldclient.get().variation("FirstFlag", user, False)
 show_message("Feature flag 'FirstFlag' is %s for this user" % (flag_value))
+#Game Difficulty
 game_value = ldclient.get().variation("GameFlag", user, False)
 show_message("Feature flag 'GameFlag' is %s for this user" % (game_value))
+#Cheat Code
+cheat_value = ldclient.get().variation("CheatFlag", user , False)
+show_message("Feature flag 'CheatFlag' is %s for this user" % (cheat_value))
 
 if flag_value :
   show_message("Your name is %s " % (user['name']))
   show_message("You are %s" % (game_value))
-  rps()
 
-if not flag_value :
+  print("Default game value set to \n",game_value)
+  if game_value == "Crazy":
+    rps_crazy(cheat_value)
+  else:
+    rps(cheat_value)
+else:
   show_message("Your name is %s " % (user['name']))
   show_message("You are %s" % (game_value))
-  rps_crazy()
+  print("Default game value set to \n",game_value)
+  if game_value == "Crazy":
+    rps_crazy(cheat_value)
+  else:
+    rps(cheat_value)
+
 
 ldclient.get().close()
 ########## End of Main Stuff ###########
