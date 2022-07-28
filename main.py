@@ -1,5 +1,4 @@
-# Hello! 
-
+# Hello! =)
 import ldclient
 from ldclient.config import Config
 
@@ -15,8 +14,6 @@ def show_message(s):
   print("*** %s" % s)
   print()
     
-print(factorial(5))
-
 # Initialize the ldclient with your environment-specific SDK key.
 if __name__ == "__main__":
   ldclient.set_config(Config("sdk-544ef775-28b1-4857-843c-5d4eb4799cbe"))
@@ -34,7 +31,6 @@ user = {
   "key": "happy-user",
   "name": "Morty"
 }
-
 # user = {
 #   "key": "grumpy-user",
 #   "name": "Rick"
@@ -43,7 +39,10 @@ user = {
 # Call LaunchDarkly with the feature flag key you want to evaluate.
 flag_value = ldclient.get().variation("FirstFlag", user, False)
 
-show_message("Feature flag 'FirstFlag' is %s for this user" % (flag_value))
+if flag_value :
+  show_message("Feature flag 'FirstFlag' is %s for this user" % (flag_value))
+  show_message("Your name is %s " % (user['name']))
+  show_message("You are %s" % (flag_value))
 
 # Here we ensure that the SDK shuts down cleanly and has a chance to deliver analytics
 # events to LaunchDarkly before the program exits. If analytics events are not delivered,
